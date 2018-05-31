@@ -1,6 +1,6 @@
 Package: strava
 Title: Create Artistic Visualisations with your Strava Exercise Data
-Version: 0.0.0.9001
+Version: 0.0.0.9002
 Authors@R: person("Marcus", "Volz", email = "marcus.volz@outlook.com", role = c("aut", "cre"))
 Description: Creates artistic visualisations with Strava data.
 Depends: R (>= 3.4.3)
