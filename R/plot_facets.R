@@ -11,14 +11,14 @@
 plot_facets <- function(data, labels = FALSE) {
   # Summarise data
   summary <- data %>%
-    dplyr::group_by(id) %>%
+    dplyr::group_by(id, type) %>%
     dplyr::summarise(lon = mean(range(lon)),
                      lat = mean(range(lat)),
                      distance = sprintf("%.1f", max(cumdist)))
 
   # Create plot
   p <- ggplot2::ggplot() +
-    ggplot2::geom_path(ggplot2::aes(lon, lat, group = id), data, size = 0.35, lineend = "round") +
+    ggplot2::geom_path(ggplot2::aes(lon, lat, group = id, colour = type), data, size = 0.35, lineend = "round") +
     ggplot2::facet_wrap(~id, scales = "free") +
     ggplot2::theme_void() +
     ggplot2::theme(panel.spacing = ggplot2::unit(0, "lines"),
